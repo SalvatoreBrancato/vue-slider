@@ -29,6 +29,9 @@ createApp({
 
         }
     },
+    created(){
+        this.autoScroll() 
+    },
     methods:{
         prev(){
             if(this.currentActive == 0){
@@ -48,6 +51,12 @@ createApp({
 
         changeImg(i){
             this.currentActive = i
+        },
+
+        autoScroll(){
+            this.autoScroll = setInterval(() => {
+                this.next()
+            }, 1500);
         }
     }
 }).mount(`#app`)
