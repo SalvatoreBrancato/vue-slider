@@ -3,6 +3,7 @@ createApp({
     data(){
         return{
             currentActive: 0,
+            
             movies: [
                 {
                     image: './img/01.webp',
@@ -57,6 +58,11 @@ createApp({
             this.autoScroll = setInterval(() => {
                 this.next()
             }, 1500);
+        },
+
+        stopScroll(){
+            clearInterval(this.autoScroll)
+            
         }
     }
 }).mount(`#app`)
