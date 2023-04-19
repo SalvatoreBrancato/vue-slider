@@ -18,7 +18,11 @@
                     <img v-bind:src="movies[currentActive].image" class="card-img-top active" alt="">
                 </div>
                 <div id="thumbs">
-                    <img v-for="(element, index) in movies" v-bind:class="(currentActive == index) ? `active` : `` " v-bind:src="element.image" alt="">
+                    <img v-for="(element, index) in movies"
+                     v-bind:class="(currentActive == index) ? `active` : `` " 
+                     v-bind:src="element.image" 
+                     alt="" 
+                     @click="changeImg(index)">
                     <!-- <img src="./img/02.webp" alt="">
                     <img src="./img/03.webp" alt="">
                     <img src="./img/04.webp" alt="">

@@ -44,6 +44,10 @@ createApp({
             }else{
                 this.currentActive++
             }
+        },
+
+        changeImg(i){
+            this.currentActive = i
         }
     }
 }).mount(`#app`)
