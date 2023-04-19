@@ -2,6 +2,7 @@ const {createApp} = Vue
 createApp({
     data(){
         return{
+            currentActive: 0,
             movies: [
                 {
                     image: './img/01.webp',
@@ -29,6 +30,20 @@ createApp({
         }
     },
     methods:{
+        prev(){
+            if(this.currentActive == 0){
+                this.currentActive = this.movies.length-1
+            }else{
+                this.currentActive--
+            }
+        },
 
+        next(){
+            if( this.currentActive == this.movies.length - 1){
+                this.currentActive = 0
+            }else{
+                this.currentActive++
+            }
+        }
     }
 }).mount(`#app`)

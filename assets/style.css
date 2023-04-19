@@ -13,17 +13,16 @@ img{
 
 #prev,
 #next{
-    position: absolute;
     top: 0;
     bottom: 0;
     width: 50%;
-    cursor: pointer;
     opacity: 0.5;
+    cursor: pointer;
+    z-index: 1;
 }
 
 #prev{
     left: 0;
-    
 }
 
 #next{
@@ -33,6 +32,7 @@ img{
 #prev:hover,
 #next:hover{
     background-color: rgba(0, 0, 0, 0.5);
+    
 }
 
 

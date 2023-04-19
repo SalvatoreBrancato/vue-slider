@@ -13,21 +13,20 @@
         <div class="vh-100 d-flex justify-content-center align-items-center">
             <div class="card">
                 <div class="position-relative">
-                    <div id="prev" class="position-absolute"></div>
-                    <div id="next" class="position-absolute"></div>
-                    <img src="./img/01.webp" class="card-img-top active" alt="">
+                    <div id="prev" class="position-absolute" @click="prev"></div>
+                    <div id="next" class="position-absolute" @click="next"></div>
+                    <img v-bind:src="movies[currentActive].image" class="card-img-top active" alt="">
                 </div>
                 <div id="thumbs">
-                    <img v-for="(element, index) in movies" class="active" v-bind:src="element.image" alt="">
+                    <img v-for="(element, index) in movies" v-bind:class="(currentActive == index) ? `active` : `` " v-bind:src="element.image" alt="">
                     <!-- <img src="./img/02.webp" alt="">
                     <img src="./img/03.webp" alt="">
                     <img src="./img/04.webp" alt="">
                     <img src="./img/05.webp" alt=""> -->
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title text-center">Marvel\'s Spiderman Miles Morale</h5>
-                  <p class="card-text">Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.</p>
-                </div>
+                  <h5 class="card-title text-center">{{movies[currentActive].title}}</h5>
+                  <p class="card-text">{{movies[currentActive].text}}
               </div>
         </div>
     </div>
