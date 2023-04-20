@@ -3,6 +3,7 @@ createApp({
     data(){
         return{
             currentActive: 0,
+            riAutoScroll : null, 
             
             movies: [
                 {
@@ -55,13 +56,14 @@ createApp({
         },
 
         autoScroll(){
-            this.autoScroll = setInterval(() => {
+            this.riAutoScroll = setInterval(() => {
                 this.next()
             }, 1500);
+            
         },
 
         stopScroll(){
-            clearInterval(this.autoScroll)
+            clearInterval(this.riAutoScroll)
             
         }
     }
